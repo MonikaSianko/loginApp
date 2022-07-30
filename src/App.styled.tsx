@@ -20,8 +20,22 @@ export const StyledContainer = styled.div`
     font-size: 0.6rem;
   }
   .user-page-img {
-    max-width: 100%;
+    width: 600px;
     height: auto;
+    padding: 0 20px 150px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    @media (max-width: 670px) {
+      padding: 0 10px 80px 10px;
+      width: 260px;
+    }
+  }
+  .log-out {
+    font-size: 1rem;
+    :hover {
+      text-decoration: underline;
+    }
   }
   button {
     min-width: 150px;
@@ -46,16 +60,13 @@ export const StyledContainer = styled.div`
       color: #70d4ca;
       margin-right: 20px;
     }
-    &.auto-width {
-      min-width: auto;
-    }
   }
 `;
 
 export const StyledFormPage = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
   width: 100%;
   form {
@@ -65,7 +76,7 @@ export const StyledFormPage = styled.div`
     min-height: 400px;
     padding: 50px;
     width: 400px;
-    @media only screen and (max-width: 520px) {
+    @media (max-width: 520px) {
       padding: 20px;
       width: 100%;
     }

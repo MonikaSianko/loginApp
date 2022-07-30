@@ -39,6 +39,7 @@ const FormSecondStep: React.FC<Props> = ({
           onBlur={onBlur}
           size="large"
           allowClear
+          autoComplete="off"
         />
         {errorUserName && <span className="error">{errorUserName}</span>}
       </div>
@@ -53,6 +54,7 @@ const FormSecondStep: React.FC<Props> = ({
           onBlur={onBlur}
           allowClear
           size="large"
+          autoComplete="off"
         />
         {(errorPassword || apiError) && (
           <span className="error">{errorPassword || apiError}</span>

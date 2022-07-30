@@ -33,6 +33,7 @@ const FormFirstStep: React.FC<Props> = ({
           onChange={onChange}
           onBlur={onBlur}
           size="large"
+          autoComplete="off"
         />
         {error && <span className="error">{error}</span>}
       </div>

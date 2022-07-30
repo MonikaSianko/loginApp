@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import "antd/dist/antd.css";
+import { Link, Route, Routes } from "react-router-dom";
+import "antd/dist/antd.min.css";
 import "./App.css";
 import { FormLogin } from "./components/FormLogin";
 import UserPage from "./components/UserPage";
@@ -17,7 +17,6 @@ interface IUserData {
 
 const App: React.FC<Props> = () => {
   const [userData, setUserData] = useState<IUserData | null>(null);
-  const navigate = useNavigate();
 
   const handleSetUserDataCallback = (apiUserData: IUserData): void => {
     setUserData(apiUserData);
@@ -33,7 +32,6 @@ const App: React.FC<Props> = () => {
 
   const handleLogOut = (): void => {
     clearUserData();
-    navigate(LOGIN_URL);
   };
 
   const userFullName = userData?.fullUserName;
@@ -43,9 +41,9 @@ const App: React.FC<Props> = () => {
       <StyledNavbar isUserPage={userFullName}>
         <span> {userFullName || "Hello Candidate!"}</span>
         {userFullName && (
-          <button className="auto-width" onClick={handleLogOut}>
+          <Link className="log-out" to={LOGIN_URL} onClick={handleLogOut}>
             log out
-          </button>
+          </Link>
         )}
       </StyledNavbar>
 
